@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>what`s your weather 1</title>
+</head>
+
+<body>
+    <div style="text-align:center; margin:6rem">
+            <h1>Have A Beautiful Week</h1>
+                <!-- raise alert if api request failed -->
+            <script class="alert alert-danger" role="alert">
+                {%if success == "False"%}
+                    alert("The information cannot be found")
+                {%endif%}
+            </script>
+                <!-- send post request for page with forecast data -->
+            <form action="/weather" method="GET">
+                <div style="margin:5rem">
+                    <label for="location" class="sr-only form-control-lg">Next week weather for:</label>
+                    <input style="padding-left:2.3rem;" type="text" name="location" id="location" class="form-control form-control-lg" placeholder="Enter country / city" required><br>
+                </div>
+            </form>
+    </div>
+</body>
+</html>
